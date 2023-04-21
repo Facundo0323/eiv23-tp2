@@ -62,7 +62,7 @@ int32_t posicion_maximo(int32_t n,const int32_t *b)
         M = b[k];
         i = 1;
         for(i=1;i<n;i++) {
-            if (M < b[k]) {
+            if (M < b[i]) {
                 M = b[i];
                 k = i;
             }
@@ -85,7 +85,15 @@ int32_t posicion_maximo(int32_t n,const int32_t *b)
  */
 void ordenar_en_sitio_menor_a_mayor(int32_t n,int32_t *b)
 {
-    // reemplazar el código de abajo con la solución
+    int32_t x, j, k;
+    k = n-1;
+    while(k>0) {
+        j = posicion_maximo(k+1, b);
+        x = b[k];
+        b[k] = b[j];
+        b[j] = x;
+        k = k-1;
+    }
     (void)n;
     (void)b;
 }
