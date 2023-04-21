@@ -11,9 +11,13 @@
 int32_t suma(int32_t A,int32_t B)
 {
     // reemplazar el código de abajo con la solución
+
+    int32_t S;
+    S = A + B;
+
     (void)A;
     (void)B;
-    return 0;
+    return S;
 }
 
 /**
@@ -26,9 +30,19 @@ int32_t suma(int32_t A,int32_t B)
 int64_t sumatoria(int32_t n,const int32_t *b)
 {
     // reemplazar el código de abajo con la solución
+
+    int64_t S;
+    int64_t A=0;
+    int32_t i=0;
+    while (i<n)
+    {
+        A += b[i];
+        i+= 1;
+    }
+    
     (void)n;
     (void)b;
-    return 0;
+    return A;
 }
 
 /**
@@ -40,10 +54,24 @@ int64_t sumatoria(int32_t n,const int32_t *b)
  */
 int32_t posicion_maximo(int32_t n,const int32_t *b)
 {
-    // reemplazar el código de abajo con la solución
+    // reemplazar el código de abajo con la 
+    int32_t k=0;
+    int32_t M,i;
+
+    if(n>1) {
+        M = b[k];
+        i = 1;
+        for(i=1;i<n;i++) {
+            if (M < b[k]) {
+                M = b[i];
+                k = i;
+            }
+        }
+    }
+
     (void)n;
     (void)b;
-    return 0;
+    return k;
 }
 
 /**
